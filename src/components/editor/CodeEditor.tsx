@@ -1,5 +1,5 @@
 import React, { useRef, useEffect, useState } from 'react'
-import { EditorView, EditorViewConfig } from '@codemirror/view'
+import { EditorView } from '@codemirror/view'
 import { EditorState } from '@codemirror/state'
 import { getEditorTheme } from './vscodeTheme'
 import { createBasicExtensions } from './cmSetup'
@@ -22,26 +22,34 @@ export const CodeEditor = React.forwardRef<
   useEffect(() => {
     if (!containerRef.current) return
 
-    const extensions = [...createBasicExtensions(), ...getEditorTheme()]
+    try {
+      const extensions = [...createBasicExtensions(), ...getEditorTheme()]
 
-    const state = EditorState.create({
-      doc: code,
-      extensions,
-    })
+      const state = EditorState.create({
+        doc: code || '',
+        extensions,
+      })
 
-    const view = new EditorView({
-      state,
-      parent: containerRef.current,
-    })
+      const view = new EditorView({
+        state,
+        parent: containerRef.current,
+      })
 
-    viewRef.current = view
-    setIsReady(true)
+      viewRef.current = view
+      setIsReady(true)
 
-    return () => {
-      view.destroy()
-      viewRef.current = null
+      return () => {
+        try {
+          view.destroy()
+          viewRef.current = null
+        } catch (e) {
+          console.error('Error destroying editor:', e)
+        }
+      }
+    } catch (error) {
+      console.error('Error creating CodeMirror editor:', error)
     }
-  }, [])
+  }, [code])
 
   useEffect(() => {
     if (ref) {
@@ -53,7 +61,7 @@ export const CodeEditor = React.forwardRef<
     }
   }, [ref, isReady])
 
-  return <div ref={containerRef} className="code-editor-container" />
+  return <div ref={containerRef} className="code-editor-container" style={{ height: '100%', width: '100%' }} />
 })
 
 CodeEditor.displayName = 'CodeEditor'
