@@ -1,0 +1,56 @@
+.vscode-shell {
+  display: grid;
+  grid-template-rows: 30px 1fr 25px;
+  grid-template-columns: 1fr;
+  height: 100vh;
+  width: 100vw;
+  background: #1a1a1a;
+  color: #00ff00;
+  font-family: 'Monaco', 'Courier New', monospace;
+  position: relative;
+}
+
+.vscode-main {
+  display: grid;
+  grid-template-columns: 50px 250px 1fr;
+  grid-template-rows: 1fr;
+  overflow: hidden;
+}
+
+.vscode-editor-area {
+  display: grid;
+  grid-template-rows: 30px 1fr;
+  grid-template-columns: 1fr;
+  overflow: hidden;
+  position: relative;
+}
+
+.vscode-editor-pane {
+  overflow: hidden;
+  position: relative;
+  background: #1a1a1a;
+}
+
+.vscode-shell[data-theme='cyberpunk-neon'] {
+  --color-accent: #00ffff;
+  --color-bg: #0a0e27;
+  --color-text: #00ffff;
+}
+
+.vscode-shell[data-theme='amber-terminal'] {
+  --color-accent: #ffb000;
+  --color-bg: #0d0a00;
+  --color-text: #ffb000;
+}
+
+.vscode-shell[data-theme='matrix-green'] {
+  --color-accent: #00ff00;
+  --color-bg: #001100;
+  --color-text: #00ff00;
+}
+
+.vscode-shell[data-theme='default'] {
+  --color-accent: #00ff00;
+  --color-bg: #1a1a1a;
+  --color-text: #00ff00;
+}

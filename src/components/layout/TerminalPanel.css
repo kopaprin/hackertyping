@@ -1,0 +1,39 @@
+.terminal-panel {
+  display: flex;
+  flex-direction: column;
+  background: #1a1a1a;
+  border-top: 1px solid rgba(0, 255, 0, 0.2);
+  height: 200px;
+  font-size: 11px;
+  color: #00ff00;
+  font-family: 'Monaco', 'Courier New', monospace;
+}
+
+.terminal-header {
+  display: flex;
+  align-items: center;
+  background: #252526;
+  border-bottom: 1px solid rgba(0, 255, 0, 0.1);
+  padding: 6px 12px;
+  height: 28px;
+}
+
+.terminal-title {
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  opacity: 0.8;
+}
+
+.terminal-content {
+  flex: 1;
+  overflow-y: auto;
+  padding: 8px 12px;
+  background: #0a0a0a;
+}
+
+.terminal-line {
+  line-height: 1.4;
+  white-space: pre-wrap;
+  word-break: break-word;
+}

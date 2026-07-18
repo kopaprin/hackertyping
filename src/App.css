@@ -1,0 +1,97 @@
+:root {
+  --color-bg: #1a1a1a;
+  --color-bg-dim: #0d0d0d;
+  --color-bg-lighter: #2d2d2d;
+  --color-accent: #00ff00;
+  --color-text: #00ff00;
+  --color-text-muted: #666;
+  --color-selection: rgba(0, 255, 0, 0.2);
+  --color-error: #ff3333;
+  --color-success: #00cc00;
+  --color-warning: #ffb000;
+}
+
+html[data-theme='cyberpunk-neon'] {
+  --color-bg: #0a0e27;
+  --color-accent: #00ffff;
+  --color-text: #00ffff;
+}
+
+html[data-theme='amber-terminal'] {
+  --color-bg: #0d0a00;
+  --color-accent: #ffb000;
+  --color-text: #ffb000;
+}
+
+html[data-theme='matrix-green'] {
+  --color-bg: #001100;
+  --color-accent: #00ff00;
+  --color-text: #00ff00;
+}
+
+.app-root {
+  width: 100vw;
+  height: 100vh;
+  background: var(--color-bg);
+  color: var(--color-text);
+  font-family: 'Monaco', 'Courier New', monospace;
+  overflow: hidden;
+  position: relative;
+}
+
+.app {
+  min-height: 100vh;
+  background: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 100%);
+  color: #00ff00;
+  font-family: 'Monaco', 'Courier New', monospace;
+  display: flex;
+  flex-direction: column;
+}
+
+.header {
+  text-align: center;
+  padding: 40px 20px;
+  border-bottom: 2px solid #00ff00;
+  box-shadow: 0 0 10px rgba(0, 255, 0, 0.3);
+}
+
+.header h1 {
+  font-size: 3rem;
+  margin: 0;
+  text-shadow: 0 0 10px #00ff00;
+  animation: glow 2s ease-in-out infinite;
+}
+
+.header p {
+  font-size: 1.1rem;
+  margin: 10px 0 0 0;
+  opacity: 0.9;
+}
+
+.main {
+  flex: 1;
+  padding: 40px 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.game-area {
+  width: 100%;
+  max-width: 800px;
+  background: rgba(0, 0, 0, 0.5);
+  border: 2px solid #00ff00;
+  border-radius: 8px;
+  padding: 40px;
+  text-align: center;
+  box-shadow: 0 0 20px rgba(0, 255, 0, 0.2);
+}
+
+@keyframes glow {
+  0%, 100% {
+    text-shadow: 0 0 10px #00ff00, 0 0 20px #00ff00;
+  }
+  50% {
+    text-shadow: 0 0 20px #00ff00, 0 0 30px #00ff00, 0 0 40px #00ff00;
+  }
+}

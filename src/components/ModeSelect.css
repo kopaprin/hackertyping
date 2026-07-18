@@ -1,0 +1,42 @@
+.mode-select {
+  padding: 4px 0;
+}
+
+.mode-group {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+
+.mode-item {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 6px 8px;
+  cursor: pointer;
+  color: #cccccc;
+  border-left: 2px solid transparent;
+  transition: all 0.2s;
+}
+
+.mode-item:hover {
+  background: rgba(0, 255, 0, 0.08);
+  color: #00ff00;
+}
+
+.mode-item.active {
+  color: #00ff00;
+  border-left-color: #00ff00;
+  background: rgba(0, 255, 0, 0.1);
+  font-weight: 500;
+  text-shadow: 0 0 3px rgba(0, 255, 0, 0.3);
+}
+
+.mode-icon {
+  font-size: 14px;
+}
+
+.mode-label {
+  font-family: 'Monaco', 'Courier New', monospace;
+  font-size: 12px;
+}

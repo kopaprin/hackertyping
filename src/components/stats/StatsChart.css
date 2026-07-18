@@ -1,0 +1,26 @@
+.stats-chart {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 255, 0, 0.02);
+  border-radius: 4px;
+  overflow: auto;
+}
+
+.stats-chart svg {
+  min-width: 100%;
+  min-height: 100%;
+}
+
+.stats-chart-empty {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100px;
+  color: #666;
+  font-size: 12px;
+  font-family: 'Monaco', 'Courier New', monospace;
+}

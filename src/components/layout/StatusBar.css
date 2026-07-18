@@ -1,0 +1,23 @@
+.status-bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: linear-gradient(to top, #1e1e1e, #252526);
+  border-top: 1px solid #00ff00;
+  box-shadow: 0 -2px 8px rgba(0, 255, 0, 0.1);
+  padding: 0 16px;
+  height: 25px;
+  font-size: 11px;
+  color: #00ff00;
+  gap: 16px;
+}
+
+.status-item {
+  white-space: nowrap;
+  font-family: 'Monaco', 'Courier New', monospace;
+  opacity: 0.9;
+}
+
+.status-right {
+  margin-left: auto;
+}
