@@ -1,5 +1,5 @@
 import { python } from '@codemirror/lang-python'
-import { EditorView, keymap, highlightSelectionMatches } from '@codemirror/view'
+import { EditorView, keymap } from '@codemirror/view'
 import { EditorState, Extension } from '@codemirror/state'
 
 export function createExtensions(): Extension[] {
@@ -7,7 +7,6 @@ export function createExtensions(): Extension[] {
     python(),
     EditorView.editable.of(false),
     keymap.of([]),
-    highlightSelectionMatches(),
   ]
 }
 
@@ -15,7 +14,6 @@ export function createBasicExtensions(): Extension[] {
   return [
     python(),
     EditorView.editable.of(false),
-    highlightSelectionMatches(),
   ]
 }
 
